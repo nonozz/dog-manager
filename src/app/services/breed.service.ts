@@ -11,7 +11,7 @@ export class BreedService {
     apiUrl = 'https://dog.ceo/api/';
 
     getBreeds() {
-        return this.http.get(this.apiUrl + 'breeds/list');
+        return this.http.get(this.apiUrl + 'breeds/list/all');
     }
 
     getBreedImages(breed: string) {

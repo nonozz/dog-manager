@@ -7,7 +7,7 @@ import { BreedService } from './breed.service';
 
 const mockBreeds = {};
 
-describe('Service: SampleService', () => {
+describe('BreedService', () => {
   let httpMock: HttpTestingController;
   let service: BreedService;
 
@@ -26,10 +26,10 @@ describe('Service: SampleService', () => {
       httpMock = _httpMock;
   }));
 
-  it('getBreeds() should return a breed list', () => {
+  it('getBreeds() should call the server', () => {
     service.getBreeds().subscribe();
 
-    const req = httpMock.expectOne('https://dog.ceo/api/breeds/list');
+    const req = httpMock.expectOne('https://dog.ceo/api/breeds/list/all');
 
     req.flush(mockBreeds);
     httpMock.verify();

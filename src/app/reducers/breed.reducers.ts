@@ -24,12 +24,24 @@ export const reducer = createReducer(
     error: null
   })),
 
-  on(breedActions.getBreedsSuccess, (state, result) => ({
-    ...state,
-    breeds: result.response.message,
-    isLoading: false,
-    error: null
-  })),
+  on(breedActions.getBreedsSuccess, (state, result) => {
+    let breeds = [...Object.keys(result.response.message)];
+
+    breeds.forEach(parentBreed => {
+      if (Array.isArray(result.response.message[parentBreed])) {
+        result.response.message[parentBreed].forEach(childBreed => {
+          breeds.push(parentBreed + '/' + childBreed)
+        });
+      }
+    });
+
+    return ({
+      ...state,
+      breeds: breeds.sort(),
+      isLoading: false,
+      error: null
+    })
+  }),
 
   on(breedActions.getBreedImages, state => ({
     ...state,

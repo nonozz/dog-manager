@@ -2,7 +2,7 @@
 
 <select (change)="selectBreed($event.target.value)">
     <option disabled selected>---</option>
-    <option [value]="breed" *ngFor="let breed of breeds">{{breed}}</option>
+    <option [value]="breed" *ngFor="let breed of breeds">{{ breed }}</option>
 </select>
 
 <div *ngIf="isLoading">{{ 'BREED.LOADING' | translate }}</div>
