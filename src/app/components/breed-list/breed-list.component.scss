@@ -1,0 +1,21 @@
+.breed-list {
+    display: flex;
+    flex-flow: row wrap;
+    gap: 10px;
+    padding: 20px;
+}
+
+.breed-img {
+    position: relative;
+    width: 30%;
+    min-height: 50px;
+
+    span {
+        position: absolute;
+        z-index: -1;
+    }
+
+    img {
+        width: 100%;
+    }
+}

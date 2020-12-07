@@ -1,0 +1,8 @@
+{
+    "BREED": {
+        "CHOOSE_BREED": "Choose a breed to see some pictures",
+        "LOADING": "Loading...",
+        "LOADING_IMAGE": "Loading image...",
+        "ERROR": "An error occured when connecting to the server:"
+    }
+}

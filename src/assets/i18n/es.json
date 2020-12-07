@@ -1,0 +1,8 @@
+{
+    "BREED": {
+        "CHOOSE_BREED": "Elige una raza para ver algunas fotos",
+        "LOADING": "Cargando...",
+        "LOADING_IMAGE": "Cargando imagen...",
+        "ERROR": "Ocurrió un error al conectar al servidor:"
+    }
+}

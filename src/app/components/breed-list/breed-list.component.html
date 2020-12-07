@@ -1,0 +1,20 @@
+<h3>{{ 'BREED.CHOOSE_BREED' | translate }}</h3>
+
+<select (change)="selectBreed($event.target.value)">
+    <option disabled selected>---</option>
+    <option [value]="breed" *ngFor="let breed of breeds">{{breed}}</option>
+</select>
+
+<div *ngIf="isLoading">{{ 'BREED.LOADING' | translate }}</div>
+
+<div *ngIf="error">
+    <strong>{{ 'BREED.ERROR' | translate }}</strong>
+    <div>{{ error }}</div>
+</div>
+
+<div class="breed-list" *ngIf="breedImages.length > 0">
+    <div class="breed-img" *ngFor="let url of breedImages">
+        <span>{{ 'BREED.LOADING_IMAGE' | translate }}</span>
+        <img [src]="url" />
+    </div>
+</div>
